@@ -1,0 +1,10 @@
+Once issue #102 has been integrated, do the following:
+
+1. Clone http://github.com/vert-x/mod-lang-scala repository
+2. Execute: `./gradlew clean install`
+3. Run `sbt update`
+4. Run `sbt run-main org.vertx.java.platform.impl.cli.Starter run src/main/scala/com/example/HelloWorldServer.scala`
+5. Go to http://localhost:8080 and you should see `Hello Scala World!` message
+
+In this configuration, when the main is executed, the Scala class is compiled on the fly
+by the mod-lang-scala extension, instantiated and run.

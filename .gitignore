@@ -1,0 +1,18 @@
+# ignore IDEA files 
+*.iml
+*.ipr
+*.iws
+.idea
+# ignore Eclipse files
+.classpath
+.project
+.settings
+.cache
+# ignore Maven generated files
+target
+# log files
+*.log
+# python tmp files
+*.pyc
+# vertx
+mods
