@@ -1,27 +1,37 @@
-This project requires SBT 0.13.1 or higher. To run:
+This project requires SBT 0.13.1 or higher. This SBT project can run a Vert.x Scala verticle in two different ways:
 
-1. Execute:
+== Run with SBT compiling verticle
+
+This is the default mode of the SBT project. In this mode, SBT does the compilation of the Scala verticle and
+running it is done by the mod-lang-scala integration. To run, simply execute the following command and when the
+message shows that verticle has been successfully deployed, go to http://localhost:8080 and you should see
+`Hello Scala World!`:
+
+    sbt "run-main org.vertx.java.platform.impl.cli.Starter run scala:com.example.HelloWorldServer"
+
+== Run with Vert.x Scala on-the-fly compilation
+
+Alternatively, you can let the Vert.x Scala integration do the compilation on the fly. This can be useful if you're
+trying to run a Vert.x Scala script as opposed to a fully defined Vert.x Scala class. To run using this method:
+
+1. Go to `build.sbt` and uncomment the `fork := true` option.
+
+2. Execute:
 
     sbt "run-main org.vertx.java.platform.impl.cli.Starter run src/main/scala/com/example/HelloWorldServer.scala"
 
-2. Go to http://localhost:8080 and you should see `Hello Scala World!` message
+3. Go to http://localhost:8080
 
-In the current configuration, when the main is executed, the Scala class is compiled on the fly by the
-mod-lang-scala extension, instantiated and run.
+== Developer mode
 
-Alternatively, this project can be run against a pre-release mod-lang-scala version, in which case:
+This project can be run against a pre-release mod-lang-scala version, in which case:
 
 1. Change mod-lang-scala version in `build.sbt` and `src/main/resources/langs.properties` files
 
-2. Clone http://github.com/vert-x/mod-lang-scala repository
+2. Clone http://github.com/vert-x/mod-lang-scala repository and apply your changes.
 
 3. Execute: `./gradlew clean install` from the cloned repository
 
 4. Run `sbt update` on this example project
 
-5. Run
-
-    sbt "run-main org.vertx.java.platform.impl.cli.Starter run src/main/scala/com/example/HelloWorldServer.scala"
-
-6. Go to http://localhost:8080 and you should see `Hello Scala World!` message
-
+5. Run according to one of the methods explained above.

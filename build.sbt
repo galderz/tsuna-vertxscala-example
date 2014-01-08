@@ -8,7 +8,7 @@ scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 scalaVersion := "2.10.2"
 
 // Fork required to avoid conflicts when compiling the .scala source on the fly
-fork := true
+// fork := true
 
 libraryDependencies ++= Seq(
   // If changing lang-scala version, make sure src/main/resources/langs.properties is updated too
