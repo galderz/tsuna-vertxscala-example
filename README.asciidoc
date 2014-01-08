@@ -10,10 +10,15 @@ In the current configuration, when the main is executed, the Scala class is comp
 mod-lang-scala extension, instantiated and run.
 
 Alternatively, this project can be run against a pre-release mod-lang-scala version, in which case:
+
 1. Change mod-lang-scala version in `build.sbt` and `src/main/resources/langs.properties` files
+
 2. Clone http://github.com/vert-x/mod-lang-scala repository
+
 3. Execute: `./gradlew clean install` from the cloned repository
+
 4. Run `sbt update` on this example project
+
 5. Run
 
     sbt "run-main org.vertx.java.platform.impl.cli.Starter run src/main/scala/com/example/HelloWorldServer.scala"
