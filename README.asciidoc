@@ -1,13 +1,22 @@
-Once issue #102 has been integrated, do the following:
+This project requires SBT 0.13.1 or higher. To run:
 
-1. Clone http://github.com/vert-x/mod-lang-scala repository
-2. Execute: `./gradlew clean install` from the cloned repository
-3. Run `sbt update` on this example project
-4. Run
+1. Execute:
 
-    sbt run-main org.vertx.java.platform.impl.cli.Starter run src/main/scala/com/example/HelloWorldServer.scala
+    sbt "run-main org.vertx.java.platform.impl.cli.Starter run src/main/scala/com/example/HelloWorldServer.scala"
 
-5. Go to http://localhost:8080 and you should see `Hello Scala World!` message
+2. Go to http://localhost:8080 and you should see `Hello Scala World!` message
 
-In this configuration, when the main is executed, the Scala class is compiled on the fly
-by the mod-lang-scala extension, instantiated and run.
+In the current configuration, when the main is executed, the Scala class is compiled on the fly by the
+mod-lang-scala extension, instantiated and run.
+
+Alternatively, this project can be run against a pre-release mod-lang-scala version, in which case:
+1. Change mod-lang-scala version in `build.sbt` and `src/main/resources/langs.properties` files
+2. Clone http://github.com/vert-x/mod-lang-scala repository
+3. Execute: `./gradlew clean install` from the cloned repository
+4. Run `sbt update` on this example project
+5. Run
+
+    sbt "run-main org.vertx.java.platform.impl.cli.Starter run src/main/scala/com/example/HelloWorldServer.scala"
+
+6. Go to http://localhost:8080 and you should see `Hello Scala World!` message
+
